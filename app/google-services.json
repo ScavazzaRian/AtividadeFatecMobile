@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "374174651856",
+    "project_id": "crudfatec",
+    "storage_bucket": "crudfatec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374174651856:android:393611198a4c797ee455d5",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsTrxJMuuJYCQD3Fej0avMy7IsgqnWTnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

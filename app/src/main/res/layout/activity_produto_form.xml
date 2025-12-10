@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@color/Purple40"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TÍTULO -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:text="Cadastrar Produto"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/Purple80"
+        android:layout_marginBottom="28dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- CAMPO NOME -->
+    <EditText
+        android:id="@+id/edtNome"
+        android:hint="Nome do produto"
+        android:padding="14dp"
+        android:background="@color/PurpleGrey80"
+        android:textColor="@color/Purple40"
+        android:textColorHint="@color/Purple40"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- CAMPO PREÇO -->
+    <EditText
+        android:id="@+id/edtPreco"
+        android:hint="Preço"
+        android:inputType="numberDecimal"
+        android:padding="14dp"
+        android:background="@color/PurpleGrey80"
+        android:textColor="@color/Purple40"
+        android:textColorHint="@color/Purple40"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- CAMPO DESCRIÇÃO -->
+    <EditText
+        android:id="@+id/edtDescricao"
+        android:hint="Descrição"
+        android:padding="14dp"
+        android:background="@color/PurpleGrey80"
+        android:textColor="@color/Purple40"
+        android:textColorHint="@color/Purple40"
+        android:layout_marginBottom="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- BOTÃO SALVAR -->
+    <Button
+        android:id="@+id/btnSalvar"
+        android:text="Salvar"
+        android:textStyle="bold"
+        android:textColor="@color/Purple80"
+        android:background="@color/Pink40"
+        android:padding="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

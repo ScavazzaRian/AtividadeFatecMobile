@@ -18,8 +18,15 @@ class MesaCreateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mesa_create)
 
         val botaoCriarMesa = findViewById<Button>(R.id.createMesa)
+        val botaoVoltar = findViewById<Button>(R.id.goToListarMesas)
+
         val editNumeroMesa = findViewById<EditText>(R.id.numeroMesa)
         val editLugaresMesa = findViewById<EditText>(R.id.lugaresMesa)
+
+        botaoVoltar.setOnClickListener {
+            startActivity(Intent(this, MesaListActivity::class.java))
+            finish()
+        }
 
         database = FirebaseDatabase.getInstance().getReference("mesas")
 

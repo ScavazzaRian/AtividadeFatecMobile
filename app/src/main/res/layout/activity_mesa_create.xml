@@ -9,12 +9,25 @@
     tools:context=".MesaCreateActivity">
 
     <Button
-        android:id="@+id/createMesa"
+        android:id="@+id/goToListarMesas"
         android:layout_width="253dp"
         android:layout_height="57dp"
         android:layout_marginStart="120dp"
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="204dp"
+        android:backgroundTint="#3F51B5"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/createMesa"
+        android:layout_width="253dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="276dp"
         android:backgroundTint="#4CAF50"
         android:text="ABRIR NOVA MESA"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +72,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Lugares"
-        app:layout_constraintBottom_toTopOf="@+id/createMesa"
+        app:layout_constraintBottom_toTopOf="@+id/goToListarMesas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

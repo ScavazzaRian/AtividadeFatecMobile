@@ -37,8 +37,8 @@ class MesaCreateActivity : AppCompatActivity() {
 
             val mesa = Mesa(
                 id = id,
-                numero = numero.toInt(),
-                lugares = lugares.toInt()
+                numero = numero,
+                lugares = lugares
             )
 
             database.child(id).setValue(mesa)

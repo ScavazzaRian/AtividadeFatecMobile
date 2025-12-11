@@ -34,8 +34,8 @@ class MesaUpdateActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().getReference("mesas")
 
         btnSalvar.setOnClickListener {
-            val novoNum = edtNum.text.toString().toInt()
-            val novosLug = edtLug.text.toString().toInt()
+            val novoNum = edtNum.text.toString()
+            val novosLug = edtLug.text.toString()
 
             val mesaAtualizada = Mesa(
                 id = mesaId!!,

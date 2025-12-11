@@ -32,7 +32,7 @@ class ProdutoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_produto)
+        setContentView(R.layout.activity_cadastro)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -40,7 +40,6 @@ class ProdutoActivity : AppCompatActivity() {
             insets
         }
 
-        // ---------- Referências ----------
         editPesquisa = findViewById(R.id.editPesquisa)
         campo1 = findViewById(R.id.campo1)
         campo2 = findViewById(R.id.campo2)
@@ -53,15 +52,15 @@ class ProdutoActivity : AppCompatActivity() {
 
         // ---------- Botões ----------
         botaoCreate.setOnClickListener {
-            startActivity(Intent(this, CreateProduto::class.java))
+            startActivity(Intent(this, ProdutoCreate::class.java))
         }
 
         botaoUpdate.setOnClickListener {
-            startActivity(Intent(this, UpdateProduto::class.java))
+            startActivity(Intent(this, ProdutoUpdate::class.java))
         }
 
         botaoDelete.setOnClickListener {
-            startActivity(Intent(this, DeleteProduto::class.java))
+            startActivity(Intent(this, ProdutoDelete::class.java))
         }
 
         botaoPesquisa.setOnClickListener {

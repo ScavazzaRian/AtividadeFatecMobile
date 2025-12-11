@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -22,7 +23,7 @@ class ProdutoDelete : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_produto_delete)
+        setContentView(R.layout.activity_delete_produto)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,8 +31,8 @@ class ProdutoDelete : AppCompatActivity() {
             insets
         }
 
-        edtIdDelete = findViewById(R.id.editDeleteProduto)
-        btnDelete = findViewById(R.id.btnDeleteProduto)
+        edtIdDelete = findViewById<EditText>(R.id.editIdDelete)
+        btnDelete = findViewById<Button>(R.id.btnDeleteProduto)
 
         btnDelete.setOnClickListener {
             val id = edtIdDelete.text.toString()

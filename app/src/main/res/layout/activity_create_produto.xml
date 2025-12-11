@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCC2DC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/txtTituloCreate"
+            android:text="Criar Produto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nome"
+            android:padding="12dp"
+            android:background="@drawable/shape_input"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editPreco"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Preço"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:background="@drawable/shape_input"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Categoria"
+            android:padding="12dp"
+            android:background="@drawable/shape_input"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:textColor="@android:color/white"
+            android:paddingVertical="12dp"
+            android:backgroundTint="#7D5260"
+            android:layout_marginTop="32dp" />
+
+    </LinearLayout>
+
+</ScrollView>

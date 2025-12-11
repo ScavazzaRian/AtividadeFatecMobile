@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -32,7 +33,7 @@ class ProdutoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_produto)
+        setContentView(R.layout.activity_cadastro)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -40,28 +41,27 @@ class ProdutoActivity : AppCompatActivity() {
             insets
         }
 
-        // ---------- Referências ----------
-        editPesquisa = findViewById(R.id.editPesquisa)
-        campo1 = findViewById(R.id.campo1)
-        campo2 = findViewById(R.id.campo2)
-        campo3 = findViewById(R.id.campo3)
+        editPesquisa = findViewById<EditText>(R.id.editPesquisa)
+        campo1 = findViewById<TextView>(R.id.campo1)
+        campo2 = findViewById<TextView>(R.id.campo2)
+        campo3 = findViewById<TextView>(R.id.campo3)
 
-        botaoPesquisa = findViewById(R.id.botaoPesquisa)
-        botaoUpdate = findViewById(R.id.botaoUpdate)
-        botaoCreate = findViewById(R.id.botaoCreate)
-        botaoDelete = findViewById(R.id.botaoDelete)
+        botaoPesquisa = findViewById<Button>(R.id.botaoPesquisa)
+        botaoUpdate = findViewById<Button>(R.id.botaoUpdate)
+        botaoCreate = findViewById<Button>(R.id.botaoCreate)
+        botaoDelete = findViewById<Button>(R.id.botaoDelete)
 
         // ---------- Botões ----------
         botaoCreate.setOnClickListener {
-            startActivity(Intent(this, CreateProduto::class.java))
+            startActivity(Intent(this, ProdutoCreate::class.java))
         }
 
         botaoUpdate.setOnClickListener {
-            startActivity(Intent(this, UpdateProduto::class.java))
+            startActivity(Intent(this, ProdutoUpdate::class.java))
         }
 
         botaoDelete.setOnClickListener {
-            startActivity(Intent(this, DeleteProduto::class.java))
+            startActivity(Intent(this, ProdutoDelete::class.java))
         }
 
         botaoPesquisa.setOnClickListener {

@@ -9,14 +9,38 @@
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:background="#FFFFFF">
 
         <LinearLayout
-            android:id="@+id/containerMesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp" />
+            android:orientation="vertical">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tituloListagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LISTAR MESAS"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:textColor="#000000" />
+
+            <!-- Container onde seus botões de mesas serão adicionados -->
+            <LinearLayout
+                android:id="@+id/containerMesas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp" />
+
+            </LinearLayout>
+
         </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

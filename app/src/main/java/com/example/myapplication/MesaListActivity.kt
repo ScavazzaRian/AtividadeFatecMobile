@@ -6,8 +6,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class MesaListActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
@@ -33,6 +32,7 @@ class MesaListActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+
         btnCriarMesa.setOnClickListener {
             startActivity(Intent(this, MesaCreateActivity::class.java))
             finish()
@@ -41,52 +41,55 @@ class MesaListActivity : AppCompatActivity() {
         val container = findViewById<LinearLayout>(R.id.containerMesas)
         database = FirebaseDatabase.getInstance().getReference("mesas")
 
-        database.get().addOnSuccessListener { snapshot ->
-            container.removeAllViews()
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                container.removeAllViews()
 
-            for (item in snapshot.children) {
-                val mesa = item.getValue(Mesa::class.java) ?: continue
+                for (item in snapshot.children) {
+                    val mesa = item.getValue(Mesa::class.java) ?: continue
 
-                val itemLayout = LinearLayout(this).apply {
-                    orientation = LinearLayout.VERTICAL
-                    setPadding(0, 20, 0, 20)
-                }
-
-                val titulo = Button(this)
-                titulo.text = "Mesa ${mesa.numero} - ${mesa.lugares} lugares"
-
-                titulo.setOnClickListener {
-                    val intent = Intent(this, MesaUpdateActivity::class.java)
-                    intent.putExtra("mesa_id", mesa.id)
-                    intent.putExtra("mesa_num", mesa.numero)
-                    intent.putExtra("mesa_lug", mesa.lugares)
-                    startActivity(intent)
-                }
-
-                val botaoExcluir = Button(this).apply {
-                    text = "Excluir"
-                    setBackgroundColor(0xFFFF4444.toInt())
-                }
-
-                botaoExcluir.setOnClickListener {
-                    mesa.id?.let { idMesa ->
-                        database.child(idMesa).removeValue()
-                            .addOnSuccessListener {
-                                Toast.makeText(
-                                    this,
-                                    "Mesa ${mesa.numero} removida!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-
-                                recreate()
-                            }
+                    val itemLayout = LinearLayout(this@MesaListActivity).apply {
+                        orientation = LinearLayout.VERTICAL
+                        setPadding(0, 20, 0, 20)
                     }
-                }
 
-                itemLayout.addView(titulo)
-                itemLayout.addView(botaoExcluir)
-                container.addView(itemLayout)
+                    val titulo = Button(this@MesaListActivity).apply {
+                        text = "Mesa ${mesa.numero} - ${mesa.lugares} lugares"
+                    }
+
+                    titulo.setOnClickListener {
+                        val intent = Intent(this@MesaListActivity, MesaUpdateActivity::class.java)
+                        intent.putExtra("mesa_id", mesa.id)
+                        intent.putExtra("mesa_num", mesa.numero)
+                        intent.putExtra("mesa_lug", mesa.lugares)
+                        startActivity(intent)
+                    }
+
+                    val botaoExcluir = Button(this@MesaListActivity).apply {
+                        text = "Excluir"
+                        setBackgroundColor(0xFFFF4444.toInt())
+                    }
+
+                    botaoExcluir.setOnClickListener {
+                        mesa.id?.let { idMesa ->
+                            database.child(idMesa).removeValue()
+                                .addOnSuccessListener {
+                                    Toast.makeText(
+                                        this@MesaListActivity,
+                                        "Mesa ${mesa.numero} removida!",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                        }
+                    }
+
+                    itemLayout.addView(titulo)
+                    itemLayout.addView(botaoExcluir)
+                    container.addView(itemLayout)
+                }
             }
-        }
+
+            override fun onCancelled(error: DatabaseError) { }
+        })
     }
 }

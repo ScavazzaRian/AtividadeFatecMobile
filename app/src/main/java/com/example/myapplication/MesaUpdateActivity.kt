@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -23,8 +24,14 @@ class MesaUpdateActivity : AppCompatActivity() {
         edtNum = findViewById(R.id.atualizarNumeroMesa)
         edtLug = findViewById(R.id.atualizarLugarMesa)
         btnSalvar = findViewById(R.id.atualizarMesaBotao)
+        val botaoVoltar = findViewById<Button>(R.id.goToListarMesas)
 
-        mesaId = intent.getStringExtra("mesa_id")
+        botaoVoltar.setOnClickListener {
+            startActivity(Intent(this, MesaListActivity::class.java))
+            finish()
+        }
+
+            mesaId = intent.getStringExtra("mesa_id")
         val num = intent.getIntExtra("mesa_num", 0)
         val lug = intent.getIntExtra("mesa_lug", 0)
 

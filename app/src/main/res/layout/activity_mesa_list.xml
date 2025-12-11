@@ -7,17 +7,46 @@
     android:layout_height="match_parent"
     tools:context=".MesaListActivity">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:background="#FFFFFF">
 
         <LinearLayout
-            android:id="@+id/containerMesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp" />
+            android:orientation="vertical">
+
+            <!-- Título -->
+            <Button
+                android:id="@+id/goToCriarMesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CRIAR MESA" />
+
+            <TextView
+                android:id="@+id/tituloListagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LISTAR MESAS"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="16dp"
+                android:textColor="#000000" />
+            
+            <LinearLayout
+                android:id="@+id/containerMesas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp" />
+
+            </LinearLayout>
+
         </ScrollView>
+
 
 
     <include
@@ -29,5 +58,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

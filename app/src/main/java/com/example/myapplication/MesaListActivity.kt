@@ -19,6 +19,7 @@ class MesaListActivity : AppCompatActivity() {
         val btnProdutos = findViewById<Button>(R.id.btnNavProdutos)
         val btnMesas = findViewById<Button>(R.id.btnNavMesas)
         val btnLogout = findViewById<Button>(R.id.btnNavLogout)
+        val btnCriarMesa = findViewById<Button>(R.id.goToCriarMesa)
 
         btnProdutos.setOnClickListener {
             startActivity(Intent(this, ProdutoActivity::class.java))
@@ -30,6 +31,10 @@ class MesaListActivity : AppCompatActivity() {
 
         btnLogout.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+        btnCriarMesa.setOnClickListener {
+            startActivity(Intent(this, MesaCreateActivity::class.java))
             finish()
         }
 

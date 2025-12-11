@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -24,10 +25,15 @@ class MesaListActivity : AppCompatActivity() {
             for (item in snapshot.children) {
                 val mesa = item.getValue(Mesa::class.java) ?: continue
 
-                val botao = Button(this)
-                botao.text = "Mesa ${mesa.numero} - ${mesa.lugares} lugares"
+                val itemLayout = LinearLayout(this).apply {
+                    orientation = LinearLayout.VERTICAL
+                    setPadding(0, 20, 0, 20)
+                }
 
-                botao.setOnClickListener {
+                val titulo = Button(this)
+                titulo.text = "Mesa ${mesa.numero} - ${mesa.lugares} lugares"
+
+                titulo.setOnClickListener {
                     val intent = Intent(this, MesaUpdateActivity::class.java)
                     intent.putExtra("mesa_id", mesa.id)
                     intent.putExtra("mesa_num", mesa.numero)
@@ -35,7 +41,29 @@ class MesaListActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
-                container.addView(botao)
+                val botaoExcluir = Button(this).apply {
+                    text = "Excluir"
+                    setBackgroundColor(0xFFFF4444.toInt())
+                }
+
+                botaoExcluir.setOnClickListener {
+                    mesa.id?.let { idMesa ->
+                        database.child(idMesa).removeValue()
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    this,
+                                    "Mesa ${mesa.numero} removida!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                recreate()
+                            }
+                    }
+                }
+
+                itemLayout.addView(titulo)
+                itemLayout.addView(botaoExcluir)
+                container.addView(itemLayout)
             }
         }
     }

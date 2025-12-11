@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.crud.ProdutoActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -20,6 +19,7 @@ class MesaListActivity : AppCompatActivity() {
         val btnProdutos = findViewById<Button>(R.id.btnNavProdutos)
         val btnMesas = findViewById<Button>(R.id.btnNavMesas)
         val btnLogout = findViewById<Button>(R.id.btnNavLogout)
+        val btnCriarMesa = findViewById<Button>(R.id.goToCriarMesa)
 
         btnProdutos.setOnClickListener {
             startActivity(Intent(this, ProdutoActivity::class.java))
@@ -31,6 +31,10 @@ class MesaListActivity : AppCompatActivity() {
 
         btnLogout.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+        btnCriarMesa.setOnClickListener {
+            startActivity(Intent(this, MesaCreateActivity::class.java))
             finish()
         }
 

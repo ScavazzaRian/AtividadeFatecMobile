@@ -50,6 +50,25 @@ class ProdutoActivity : AppCompatActivity() {
         botaoCreate = findViewById(R.id.botaoCreate)
         botaoDelete = findViewById(R.id.botaoDelete)
 
+
+        val btnProdutos = findViewById<Button>(R.id.btnNavProdutos)
+        val btnMesas = findViewById<Button>(R.id.btnNavMesas)
+        val btnLogout = findViewById<Button>(R.id.btnNavLogout)
+
+        btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutoActivity::class.java))
+        }
+
+        btnMesas.setOnClickListener {
+            startActivity(Intent(this, MesaListActivity::class.java))
+        }
+
+        btnLogout.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
+
         botaoCreate.setOnClickListener {
             startActivity(Intent(this, ProdutoCreate::class.java))
         }
@@ -88,7 +107,7 @@ class ProdutoActivity : AppCompatActivity() {
                 campo2.text = "Preço: $preco"
                 campo3.text = "Descrição: $descricao"
 
-                editPesquisa.text.clear()
+                editPesquisa.setText("")
 
             } else {
                 Toast.makeText(this, "Produto não encontrado!", Toast.LENGTH_SHORT).show()

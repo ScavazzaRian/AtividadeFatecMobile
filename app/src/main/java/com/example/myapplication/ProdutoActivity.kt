@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class ProdutoActivity : AppCompatActivity() {
-
+    //O produto e criado com sucesso, porem, a gente nao conseguiu fazer exibir ele
     private lateinit var botaoUpdate: Button
     private lateinit var botaoCreate: Button
     private lateinit var botaoDelete: Button

@@ -1,4 +1,4 @@
-package com.example.crud
+package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -13,7 +13,7 @@ import com.example.myapplication.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class ProdutoUpdate : AppCompatActivity() {
+class ProdutosUpdate : AppCompatActivity() {
 
     private lateinit var edtId: EditText
     private lateinit var edtNome: EditText
@@ -27,7 +27,7 @@ class ProdutoUpdate : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_prduto_update)
+        setContentView(R.layout.activity_produtos_update)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

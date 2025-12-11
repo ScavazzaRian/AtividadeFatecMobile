@@ -29,8 +29,7 @@
                 android:gravity="center"
                 android:padding="16dp"
                 android:textColor="#000000" />
-
-            <!-- Container onde seus botões de mesas serão adicionados -->
+            
             <LinearLayout
                 android:id="@+id/containerMesas"
                 android:layout_width="match_parent"
@@ -43,8 +42,7 @@
         </ScrollView>
 
 
-<<<<<<< HEAD
-=======
+
     <include
 
         android:id="@+id/navbar"
@@ -54,6 +52,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
->>>>>>> origin/main
 </androidx.constraintlayout.widget.ConstraintLayout>

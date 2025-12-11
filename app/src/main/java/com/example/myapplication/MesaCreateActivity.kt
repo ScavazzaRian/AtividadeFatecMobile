@@ -21,7 +21,7 @@ class MesaCreateActivity : AppCompatActivity() {
         val editNumeroMesa = findViewById<EditText>(R.id.numeroMesa)
         val editLugaresMesa = findViewById<EditText>(R.id.lugaresMesa)
 
-        val db = FirebaseDatabase.getInstance().getReference("mesas")
+        database = FirebaseDatabase.getInstance().getReference("mesas")
 
         botaoCriarMesa.setOnClickListener {
 
@@ -33,7 +33,7 @@ class MesaCreateActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val id = db.push().key!!
+            val id = database.push().key!!
 
             val mesa = Mesa(
                 id = id,
@@ -41,7 +41,7 @@ class MesaCreateActivity : AppCompatActivity() {
                 lugares = lugares.toInt()
             )
 
-            db.child(id).setValue(mesa)
+            database.child(id).setValue(mesa)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Mesa cadastrada!", Toast.LENGTH_SHORT).show()
                     editNumeroMesa.text.clear()

@@ -30,13 +30,7 @@
             android:name=".MesaListActivity"
             android:exported="false" />
         <activity
-            android:name=".MesaActivity"
-            android:exported="false" />
-        <activity
             android:name=".MesaCreateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MesaDeleteActivity"
             android:exported="false" />
         <activity
             android:name=".CadastroActivity"

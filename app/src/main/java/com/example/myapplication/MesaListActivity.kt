@@ -16,6 +16,23 @@ class MesaListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mesa_list)
 
+        val btnProdutos = findViewById<Button>(R.id.btnNavProdutos)
+        val btnMesas = findViewById<Button>(R.id.btnNavMesas)
+        val btnLogout = findViewById<Button>(R.id.btnNavLogout)
+
+        btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutoActivity::class.java))
+        }
+
+        btnMesas.setOnClickListener {
+            startActivity(Intent(this, MesaListActivity::class.java))
+        }
+
+        btnLogout.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         val container = findViewById<LinearLayout>(R.id.containerMesas)
         database = FirebaseDatabase.getInstance().getReference("mesas")
 

@@ -11,6 +11,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.MainActivity
+import com.example.myapplication.MesaListActivity
 import com.example.myapplication.R
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -34,6 +36,23 @@ class ProdutoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_cadastro)
+
+        val btnProdutos = findViewById<Button>(R.id.btnNavProdutos)
+        val btnMesas = findViewById<Button>(R.id.btnNavMesas)
+        val btnLogout = findViewById<Button>(R.id.btnNavLogout)
+
+        btnProdutos.setOnClickListener {
+            startActivity(Intent(this, ProdutoActivity::class.java))
+        }
+
+        btnMesas.setOnClickListener {
+            startActivity(Intent(this, MesaListActivity::class.java))
+        }
+
+        btnLogout.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

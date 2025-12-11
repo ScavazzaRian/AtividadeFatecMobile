@@ -62,29 +62,29 @@
 
         <TextView
             android:id="@+id/campo1"
+            android:layout_width="@dimen/cardview_default_elevation"
+            android:layout_height="@dimen/cardview_default_elevation"
             android:text="Nome:"
             android:textColor="#6650A4"
-            android:textSize="18sp"
-            android:layout_height="@dimen/cardview_default_elevation"
-            android:layout_width="@dimen/cardview_default_elevation"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/campo2"
+            android:layout_width="@dimen/cardview_default_elevation"
+            android:layout_height="@dimen/cardview_default_elevation"
             android:layout_marginTop="8dp"
             android:text="Preço:"
             android:textColor="#6650A4"
-            android:textSize="18sp"
-            android:layout_height="@dimen/cardview_default_elevation"
-            android:layout_width="@dimen/cardview_default_elevation"/>
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/campo3"
+            android:layout_width="@dimen/cardview_default_elevation"
+            android:layout_height="@dimen/cardview_default_elevation"
             android:layout_marginTop="8dp"
             android:text="Categoria:"
             android:textColor="#6650A4"
-            android:textSize="18sp"
-            android:layout_height="@dimen/cardview_default_elevation"
-            android:layout_width="@dimen/cardview_default_elevation"/>
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -92,7 +92,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="96dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,6 +126,17 @@
             android:text="Excluir"
             android:textColor="@android:color/white" />
 
+
     </LinearLayout>
+
+    <include
+
+        android:id="@+id/navbar"
+        layout="@layout/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

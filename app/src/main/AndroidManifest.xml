@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ProdutoUpdate"
+            android:exported="false" />
+        <activity
+            android:name=".ProdutoDelete"
+            android:exported="false" />
+        <activity
+            android:name=".ProdutoCreate"
+            android:exported="false" />
+        <activity
+            android:name=".ProdutoActivity"
+            android:exported="false" />
+        <activity
             android:name=".MesaUpdateActivity"
             android:exported="false" />
         <activity

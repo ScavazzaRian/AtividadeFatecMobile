@@ -30,8 +30,8 @@ class ProdutoDelete : AppCompatActivity() {
             insets
         }
 
-        edtIdDelete = findViewById(R.id.editDeleteProduto)
-        btnDelete = findViewById(R.id.btnDeleteProduto)
+        edtIdDelete = findViewById<EditText>(R.id.editDeleteProduto)
+        btnDelete = findViewById<Button>(R.id.btnDeleteProduto)
 
         btnDelete.setOnClickListener {
             val id = edtIdDelete.text.toString()

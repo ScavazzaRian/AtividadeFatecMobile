@@ -41,15 +41,15 @@ class ProdutoActivity : AppCompatActivity() {
             insets
         }
 
-        editPesquisa = findViewById(R.id.editPesquisa)
-        campo1 = findViewById(R.id.campo1)
-        campo2 = findViewById(R.id.campo2)
-        campo3 = findViewById(R.id.campo3)
+        editPesquisa = findViewById<EditText>(R.id.editPesquisa)
+        campo1 = findViewById<TextView>(R.id.campo1)
+        campo2 = findViewById<TextView>(R.id.campo2)
+        campo3 = findViewById<TextView>(R.id.campo3)
 
-        botaoPesquisa = findViewById(R.id.botaoPesquisa)
-        botaoUpdate = findViewById(R.id.botaoUpdate)
-        botaoCreate = findViewById(R.id.botaoCreate)
-        botaoDelete = findViewById(R.id.botaoDelete)
+        botaoPesquisa = findViewById<Button>(R.id.botaoPesquisa)
+        botaoUpdate = findViewById<Button>(R.id.botaoUpdate)
+        botaoCreate = findViewById<Button>(R.id.botaoCreate)
+        botaoDelete = findViewById<Button>(R.id.botaoDelete)
 
         // ---------- Botões ----------
         botaoCreate.setOnClickListener {

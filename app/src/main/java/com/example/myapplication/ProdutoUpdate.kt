@@ -34,11 +34,12 @@ class ProdutoUpdate : AppCompatActivity() {
             insets
         }
 
-        edtId = findViewById(R.id.editIdProdutoUpdate)
-        edtNome = findViewById(R.id.editNomeProdutoUpdate)
-        edtPreco = findViewById(R.id.editPrecoProdutoUpdate)
-        edtDescricao = findViewById(R.id.editDescricaoProdutoUpdate)
-        btnUpdate = findViewById(R.id.btnUpdateProduto)
+        edtId = findViewById<EditText>(R.id.editIdProdutoUpdate)
+        edtNome = findViewById<EditText>(R.id.editNomeProdutoUpdate)
+        edtPreco = findViewById<EditText>(R.id.editPrecoProdutoUpdate)
+        edtDescricao = findViewById<EditText>(R.id.editDescricaoProdutoUpdate)
+        btnUpdate = findViewById<Button>(R.id.btnUpdateProduto)
+
 
         btnUpdate.setOnClickListener {
             val id = edtId.text.toString()

@@ -7,28 +7,32 @@
     android:background="#CCC2DC">
 
     <TextView
+        android:id="@+id/txtTituloDelete"
         android:text="Excluir Produto"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#D0BCFF"
         android:gravity="center"
-        android:layout_width="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_marginBottom="16dp" />
 
     <EditText
         android:id="@+id/editIdDelete"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="ID do produto"
+        android:padding="12dp"
         android:background="@drawable/shape_input"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="16dp" />
 
     <Button
-        android:id="@+id/btnExcluir"
+        android:id="@+id/btnDeleteProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Excluir"
         android:textColor="@android:color/white"
+        android:paddingVertical="12dp"
         android:backgroundTint="#7D5260"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="32dp" />
 
 </LinearLayout>

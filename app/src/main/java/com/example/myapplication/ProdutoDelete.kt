@@ -23,7 +23,7 @@ class ProdutoDelete : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_cadastro)
+        setContentView(R.layout.activity_delete_produto)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -31,7 +31,7 @@ class ProdutoDelete : AppCompatActivity() {
             insets
         }
 
-        edtIdDelete = findViewById<EditText>(R.id.editDeleteProduto)
+        edtIdDelete = findViewById<EditText>(R.id.editIdDelete)
         btnDelete = findViewById<Button>(R.id.btnDeleteProduto)
 
         btnDelete.setOnClickListener {

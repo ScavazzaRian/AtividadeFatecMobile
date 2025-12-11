@@ -11,51 +11,64 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/txtTituloCreate"
-            android:text="Criar Produto"
+            android:id="@+id/txtTituloUpdate"
+            android:text="Editar Produto"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#D0BCFF"
             android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="16dp" />
+            android:layout_width="match_parent" />
 
+        <!-- ID -->
         <EditText
-            android:id="@+id/editNome"
+            android:id="@+id/editIdProdutoUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="ID do produto"
+            android:background="@drawable/shape_input"
+            android:padding="12dp"
+            android:layout_marginTop="24dp" />
+
+        <!-- Nome -->
+        <EditText
+            android:id="@+id/editNomeProdutoUpdate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Nome"
-            android:padding="12dp"
             android:background="@drawable/shape_input"
+            android:padding="12dp"
             android:layout_marginTop="16dp" />
 
+        <!-- Preço -->
         <EditText
-            android:id="@+id/editPreco"
+            android:id="@+id/editPrecoProdutoUpdate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Preço"
             android:inputType="numberDecimal"
-            android:padding="12dp"
             android:background="@drawable/shape_input"
+            android:padding="12dp"
             android:layout_marginTop="16dp" />
 
+        <!-- Descrição -->
         <EditText
-            android:id="@+id/editCategoria"
+            android:id="@+id/editDescricaoProdutoUpdate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Categoria"
-            android:padding="12dp"
+            android:hint="Descrição"
             android:background="@drawable/shape_input"
+            android:padding="12dp"
             android:layout_marginTop="16dp" />
 
+        <!-- Botão Atualizar -->
         <Button
-            android:id="@+id/btnSalvar"
+            android:id="@+id/btnUpdateProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Salvar"
+            android:text="Atualizar"
             android:textColor="@android:color/white"
+            android:backgroundTint="#6650A4"
             android:paddingVertical="12dp"
-            android:backgroundTint="#7D5260"
             android:layout_marginTop="32dp" />
 
     </LinearLayout>

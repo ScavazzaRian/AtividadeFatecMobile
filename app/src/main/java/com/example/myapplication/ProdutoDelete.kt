@@ -1,4 +1,4 @@
-package com.example.crud
+package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -23,7 +23,7 @@ class ProdutoDelete : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_delete_produto)
+        setContentView(R.layout.activity_produto_delete)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

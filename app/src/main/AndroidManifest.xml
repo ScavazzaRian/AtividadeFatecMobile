@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".MesaUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MesaListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MesaActivity"
             android:exported="false" />
         <activity
             android:name=".MesaCreateActivity"
             android:exported="false" />
         <activity
-            android:name=".MesaListActivity"
-            android:exported="false" />
-        <activity
             android:name=".MesaDeleteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MesaUpdateActivity"
             android:exported="false" />
         <activity
             android:name=".CadastroActivity"

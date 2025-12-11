@@ -18,7 +18,9 @@
             android:textColor="#D0BCFF"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:layout_height="@dimen/cardview_default_elevation"
+            />
 
         <EditText
             android:id="@+id/editNome"
@@ -26,7 +28,6 @@
             android:layout_height="50dp"
             android:hint="Nome"
             android:padding="12dp"
-            android:background="@drawable/shape_input"
             android:layout_marginTop="16dp" />
 
         <EditText
@@ -36,7 +37,6 @@
             android:hint="Preço"
             android:inputType="numberDecimal"
             android:padding="12dp"
-            android:background="@drawable/shape_input"
             android:layout_marginTop="16dp" />
 
         <EditText
@@ -45,7 +45,6 @@
             android:layout_height="50dp"
             android:hint="Categoria"
             android:padding="12dp"
-            android:background="@drawable/shape_input"
             android:layout_marginTop="16dp" />
 
         <Button
@@ -55,7 +54,7 @@
             android:text="Salvar"
             android:textColor="@android:color/white"
             android:paddingVertical="12dp"
-            android:backgroundTint="#7D5260"
+            android:backgroundTint="#5D1515"
             android:layout_marginTop="32dp" />
 
     </LinearLayout>
